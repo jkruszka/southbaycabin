@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "St. Germain, South Bay Cabin, Availability";
+	ViewBag.MetaDescription = "Check this summers availability and contact us to rent South Bay Cabin.";
+	ViewBag.MetaKeywords = "summer cabin availability, cabin rental, cabin to rent, st. germain cabin availability";    
+}
+
+@section js { 
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			var date = new Date();
+			var d = date.getDate();
+			var m = date.getMonth();
+			var y = date.getFullYear();
+
+			if (m > 8) {
+				y++;
+				m = 4;
+			}
+			else if ( m< 4){
+				m = 4;
+			}
+
+			$('#calendar').fullCalendar({
+				header: {
+					left: '',
+					center: 'title',
+					right: 'prev,next'
+				},
+				editable: false,
+				year: y,
+				month: m,
+				date: d,
+				events: function (start, end, callback) {
+					$.ajax({
+						url: '/Home/GetBooked',
+						type: 'POST',
+						dataType: 'json',
+						traditional: true,
+						success: function (result) {
+							var events = [];
+							$.each(result, function (i, item) {
+								events.push({
+									title: item.Title,
+									start: item.Start.toString(),
+									end: item.End.toString()
+								});
+							});
+							callback(events);
+						}
+					});
+				}
+			});
+
+		});
+	</script> 
+}
+
+<div class="post">
+	<h2 class="title">Availability</h2><p>Weekly rentals run from Sunday to Sunday. </p>
+</div>
+<div id="calendar"></div>
+
+

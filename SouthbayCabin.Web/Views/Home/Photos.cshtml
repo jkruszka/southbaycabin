@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+	ViewBag.Title = "St. Germain, South Bay Cabin, Photos";
+	ViewBag.MetaDescription = "Take a peak at some pictures of South Bay Cabin.  Don't beleive it can be this good, rent it for a week and find out for yourself.";
+	ViewBag.MetaKeywords = "st. germain cabin photos, cabin rental photos, clean cabin to rent";    
+}
+
+@section js { 
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var galleries = $('.ad-gallery').adGallery({
+				// Width of the image, set to false and it will 
+				// read the CSS width
+				loader_image: '../content/images/loader.gif',
+				width:590, 
+
+			});
+
+		})
+	</script>
+}
+
+<div class="post">
+	<h2 class="title">Photos</h2>
+</div>
+<div id="container">
+	<div id="gallery" class="ad-gallery">
+	 <div class="ad-image-wrapper">
+		  </div>
+		  <div class="ad-controls">
+		  </div>
+		  <div class="ad-nav">
+			<div class="ad-thumbs">
+			  <ul class="ad-thumb-list">
+			  			                        <li>
+              <a href="/content/images/img_dock.jpg">
+                <img src="/content/images/t_img_dock.jpg" title="Lake front" longdesc="http://coffeescripter.com/" alt="Enjoy your very own pier for access to Little St. Germain Lake" class="image0">
+              </a>
+            </li> 
+                        <li>
+              <a href="/content/images/img_kitchen.jpg">
+                <img src="/content/images/t_img_kitchen.jpg" title="Kitchen and Dinette" longdesc="Kitchen" alt="Appliances include range, refrigerator, microwave, toaster and coffee maker" class="image1">
+              </a>
+            </li>
+			                        <li>
+              <a href="/content/images/img_familyroom.jpg">
+                <img src="/content/images/t_img_familyroom.jpg" title="Family room" longdesc="Family room" class="image2">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_kitchen01.jpg">
+                <img src="/content/images/t_img_kitchen01.jpg" title="Family room and Kitchen" longdesc="Living room and Kitchen" class="image3">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_room01.jpg">
+                <img src="/content/images/t_img_room01.jpg" title="Bedroom #1" longdesc="Bedroom #1" alt="Queen and twin beds" class="image4">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_room02.jpg">
+                <img src="/content/images/t_img_room02.jpg" title="Bedroom #2" longdesc="Bedroom #2" alt="Two double beds" class="image5">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_out01.jpg">
+                <img src="/content/images/t_img_out01.jpg" title="Patio" longdesc="Patio" alt="Enjoy the lake from the patio" class="image6">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_out02.jpg">
+                <img src="/content/images/t_img_out02.jpg" title="Lakeside" longdesc="Backyard" alt="End the day with a lakeside camp fire" class="image7">
+              </a>
+            </li>
+                        <li>
+              <a href="/content/images/img_out04.jpg">
+                <img src="/content/images/t_img_out04.jpg" title="Front deck" longdesc="" alt="" class="image8">
+              </a>
+            </li>
+			                        <li>
+              <a href="/content/images/img_out05.jpg">
+                <img src="/content/images/t_img_out05.jpg" title="Driveway" longdesc="" alt="" class="image9">
+              </a>
+            </li>                       
+				
+				</ul>
+			</div>
+		  </div>
+	</div>
+</div>

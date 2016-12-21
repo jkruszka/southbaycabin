@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>http://www.southbaycabin.com/</loc>
+		<lastmod>2012-11-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>http://www.southbaycabin.com/home/photos</loc>
+		<lastmod>2012-11-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.southbaycabin.com/home/availability</loc>
+		<lastmod>2012-11-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.southbaycabin.com/home/amenities</loc>
+		<lastmod>2012-11-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>http://www.southbaycabin.com/home/rates</loc>
+		<lastmod>2012-11-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+</urlset>

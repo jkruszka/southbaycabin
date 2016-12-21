@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="post">
+	<h2 class="title">Reservations   <a href="@Url.Action("Add", "Reservation")" Title="Add Reservation" ><img src="@Url.Content("~/content/images/zoom_in.png")" height="30" style="vertical-align:middle;" /></a></h2>
+</div>
+
+<table id="list" class="scroll" ></table>
+<div id="pager" class="scroll" ></div>
+
+@section js {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			jQuery('#list').jqGrid({
+				url: '/reservation/indexgrid/',
+				datatype: 'json',
+				mtype: 'GET',
+				colNames: ['Actions', 'Name', 'Phone', 'Start Date', 'End Date'],
+				colModel: [
+					  { name: 'Actions', index: 'Actions', sortable: false, align: 'center', search: false, width: 100 },
+					  { name: 'Name', index: 'Name', sortable: false, search: false, width: 150 },
+					  { name: 'Phone', index: 'Phone', sortable: false, search: false, width: 150 },
+					  { name: 'Start', index: 'Start', sortable: false, search: false, width: 100 },
+					  { name: 'End', index: 'End', sortable: false, search: false, width: 100 }
+					],
+				loadtext: "Retrieving Reservations...",
+				rowNum: 20,
+				rowList: [20, 40, 80],
+				pager: '#pager',
+				sortname: 'Start',
+				sortorder: 'asc',
+				ignoreCase: true,
+				viewrecords: true,
+				gridComplete: gridSetup,
+				height: 300,
+				caption: 'Reservations',
+				jsonReader: {
+					root: 'rows',
+					page: 'page',
+					total: 'total',
+					records: 'records',
+					repeatitems: false,
+					cell: 'cell',
+					id: 'Id',
+					userdata: 'userdata'
+				}
+			});
+
+			jQuery("#list").jqGrid('navGrid', '#pager', { search: false, del: false, add: false, edit: false });
+
+			function gridSetup() {
+				var ids = jQuery("#list").jqGrid('getDataIDs');
+				for (var i = 0; i < ids.length; i++) {
+					var cl = ids[i];
+					ed = "<a href='/Reservation/Edit/" + cl + "' Title='Edit' ><img src='../content/images/editpencil.png'  style='padding-right:5px;' /></a>";
+					de = "<a Title='Delete' onclick=\"jQuery('#list').jqGrid('delGridRow','" + cl + "', { reloadAfterSubmit:false, url:'/Reservation/Delete' });\"  ><img src='../content/images/remove.png' height='15' style='padding-right:5px;' /></a>";
+
+					jQuery("#list").jqGrid('setRowData', ids[i], { Actions: ed + de });
+				}
+			}
+
+		});
+	</script>
+}

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+	<link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/ui.jqgrid.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+	<link href="@Url.Content("~/Content/fullcalendar.css")" rel="stylesheet" type="text/css" />	
+	<link href="@Url.Content("~/Content/jquery.ad-gallery.css")" rel="stylesheet" type="text/css" />	
+    <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/grid.locale-en.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.jqgrid.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/fullcalendar.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.ad-gallery.min.js")" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="page" id="wrapper">
+
+    <div id="menu">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+			<li>@Html.ActionLink("Photos", "Photos", "Home")</li>
+			<li>@Html.ActionLink("Availability", "Availability", "Home")</li>
+			<li>@Html.ActionLink("Amenities", "Amenities", "Home")</li>		
+			<li>@Html.ActionLink("Rates", "Rates", "Home")</li>		
+        </ul>
+    </div>
+		
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">South Bay Cabin</a> </h1>
+			<p> on Little St. Germain Lake</p>
+		</div>
+	</div>		
+	<!-- end #header -->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+		<div id="content">
+            @RenderBody()
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #content -->
+		<div id="sidebar">
+			<ul>
+				<li>
+					<h2>Contact Us</h2>
+					<ul>
+					    <li>Harv's Vacation Rentals</li>
+					    <li>715.542.3022 or 715.891.2783</li>
+						<li><a href="mailto:kdcharvey@frontiernet.net?Subject=South%20Bay%20Cabin%20Inquiry" ">Email</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2>St. Germain</h2>
+					<ul>
+						<li><a href="http://www.st-germain.com/" target="_blank">Activities & Events</a></li>
+						<li><a href="http://www.lake-link.com/Wisconsin-Fishing-Reports/report.cfm/13477/Little-St-Germain-Lake-Vilas-County/" target="_blank">Fishing Report</a></li>
+						<li><a href="http://dnr.wi.gov/lakes/maps/DNR/1596300a.pdf" target="_blank">DNR Lake Map</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2>Minocqua</h2>
+					<ul>
+						<li><a href="http://www.minocqua.org/" target="_blank">Activities & Events</a></li>
+						<li><a href="http://www.lakelandtimes.com/" target="_blank">Lakeland Times</a></li>
+						<li><a href="http://dnr.wi.gov/lakes/lakepages/LakeDetail.aspx?wbic=1542400" target="_blank">Lake Minocqua</a></li>
+					</ul>
+				</li>
+				<li>
+					<h2>Eagle River</h2>
+					<ul>
+						<li><a href="http://www.eagleriver.org/" target="_blank">Activities & Events</a></li>
+						<li><a href="http://dnr.wi.gov/lakes/maps/DNR/1599400a.pdf" target="_blank">DNR Lake Map</a></li>
+					</ul>
+				</li>
+				<li>	
+
+				</li>   
+							
+			</ul>
+			<div style="margin-left:auto; margin-right:auto; width:70%; padding-bottom:30px;">					
+				<link rel="stylesheet" type="text/css" media="screen" href="http://img.weather.weatherbug.com/Style/stickers/v2/Stickers_180x150.css" /> 
+				<div class="wXbody">
+					<iframe id="WeatherBugSticker_180x150_v2" src="http://weather.weatherbug.com/desktop-weather/web-widgets/getSticker.html?ZipCode=54558&ZCode=z5545&Size=180x150&StationID=KEGV&units=0&Version=2&lang_id=en-us" width="174" height="96" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+					<div class="wXlinks">
+						<span class="link"><a href="http://weather.weatherbug.com/weather-forecast.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/WI/Saint Germain-weather/local-forecast/7-day-forecast.html?zcode=z5545&units=0'">Forecast</a></span>
+						<span class="link"><a href="http://weather.weatherbug.com/doppler-radar.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/WI/Saint Germain-weather/local-radar/doppler-radar.html?zcode=z5545&units=0'">Radar</a></span>
+						<span class="link"><a href="http://weather.weatherbug.com/weather-cams.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/WI/Saint Germain-weather/weather-cams/local-cams.html?zcode=z5545&units=0'">Cameras</a></span>
+						<span class="link"><a href="http://weather.weatherbug.com/weather-photos/photo-gallery.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/weather-photos/photo-gallery.html?zcode=z5545&units=0&zip=54558'">Photos</a></span>
+						<div class="footer">
+							<a href="http://weather.weatherbug.com/default.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/WI/Saint Germain-weather.html?zcode=z5545&units=0'"><img src="http://img.weather.weatherbug.com/images/stickers/v2/180x150/wxbug-logo.jpg"  border="0" alt="WeatherBug" /></a>
+						</div>
+					</div>
+				</div>   
+			</div>
+		</div>
+
+		<!-- end #sidebar -->
+		<div style="clear: both;">&nbsp;</div>
+	</div>
+	</div>
+	</div>
+	<!-- end #page -->
+</div>
+<!-- end #wrapper -->
+
+	<div id="footer">
+		<p>Copyright (c) 2012 southbaycabin.com. All rights reserved.<br />CSS by <a href="http://www.freecsstemplates.org">FCT</a>.  Site by Jerod Kruszka.</p>
+	</div>
+		<div id="logindisplay" style="float:right;">
+        @Html.Partial("_LogOnPartial")
+    </div>
+	<!-- end #footer -->
+	 @RenderSection("js", false)
+</body>
+</html>
